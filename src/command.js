@@ -1,10 +1,19 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { Client, Events, GatewayIntentBits, SlashCommandBuilder} = require('discord.js');
+const { token } = require('../config.json');
+const client = new Client({
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.MessageContent,
+		GatewayIntentBits.GuildMembers,
+	],
+}); 
 
-module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('ping')
-		.setDescription('Replies with Pong!'),
-	async execute(interaction) {
-		await interaction.reply('Pong!');
-	},
-};
+client.on('messageCreate', message => {
+    if (message.content === 'hee') {
+      message.channel.send(`ควยไรลูกกะหรี่ห้ะ`);
+    }
+  });
+
+
+client.login(token);
