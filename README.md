@@ -12,4 +12,10 @@
 
 ```
 npm install discord.js
+npm i @discordjs/builders
+npm i @discordjs/opus
+npm i @discordjs/rest
+npm i @discordjs/voice
+npm i discord=api-types
+npm i discord-player
 ```
